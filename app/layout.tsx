@@ -2,15 +2,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const Vazir = localFont({
+  src: "./fonts/Vazir.woff2",
+  display: "swap",
 });
 
 // type DefaultTemplateString = {
@@ -32,12 +26,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fa-IR" dir="rtl">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+    <html lang="fa-IR" dir="rtl" className={Vazir.className}>
+      <body>{children}</body>
     </html>
   );
 }
